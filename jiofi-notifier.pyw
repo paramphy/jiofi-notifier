@@ -41,6 +41,24 @@ def main():
         )  
         # short delay between notifications
         time.sleep(100)
+    #print("Jiofi is connected")
+
+    if batterylevel == 25 and batterystatus == "Charging":
+        notification.notify(
+            #title of the notification,
+            title = "Jiofi battry is full. Consider pluging out.",
+            #the body of the notification
+            message = "Battery level = {bl} % \nBattery status = {bs}".format(
+                        bl = batterylevel,
+                        bs = batterystatus),  
+            #creating icon for the notification
+            #we need to download a icon of ico file format
+            app_icon = "Custom-Icon-Design-Mono-General-3-Wifi.ico",
+            # the notification stays for 50sec
+            timeout  = 100
+        )  
+        # short delay between notifications
+        time.sleep(100)
 if __name__ == "__main__":
     while True:
         try:
